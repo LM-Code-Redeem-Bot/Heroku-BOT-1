@@ -1,7 +1,25 @@
 import discord
 import os
 import requests
-from keep_alive import keep_alive
+# from keep_alive import keep_alive
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+
+@app.route('/')
+def home():
+    return "Hello. I am alive!"
+
+
+def run():
+    app.run(debug=True)
+
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 import time
 from threading import Thread
 import pandas as pd
