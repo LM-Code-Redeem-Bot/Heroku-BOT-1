@@ -1,0 +1,7 @@
+discord
+requests
+pandas
+numpy
+matplotlib
+six
+asyncio
