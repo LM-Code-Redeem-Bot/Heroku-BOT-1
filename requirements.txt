@@ -5,3 +5,5 @@ numpy
 matplotlib
 six
 asyncio
+gunicorn
+flask
