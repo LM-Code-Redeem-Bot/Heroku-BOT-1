@@ -13,13 +13,13 @@ def home():
     return "Hello. I am alive!"
 
 
-def run():
-    app.run(debug=True)
+# def run():
+#     app.run(debug=True)
 
 
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
+# def keep_alive():
+#     t = Thread(target=run)
+#     t.start()
 import time
 from threading import Thread
 import pandas as pd
@@ -281,3 +281,4 @@ keep_alive()
 loop = asyncio.get_event_loop()
 loop.create_task(client.start(os.getenv('TOKEN')))
 Thread(target=loop.run_forever).start()
+app.run(debug=True)
