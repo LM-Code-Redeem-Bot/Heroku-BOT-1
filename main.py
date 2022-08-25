@@ -1,7 +1,6 @@
 import discord
 import os
 import requests
-from keep_alive import keep_alive
 import time
 from threading import Thread
 import pandas as pd
@@ -258,6 +257,24 @@ async def on_message(message):
             await message.channel.send(msg1)
             await message.channel.send('==================================')
 
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+
+@app.route('/')
+def home():
+    return "Hello. I am alive!"
+
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 
 keep_alive()
 loop = asyncio.get_event_loop()
