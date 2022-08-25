@@ -269,7 +269,7 @@ def home():
 
 
 def run():
-    app.run(debug=True,port=8080)
+    app.run(debug=True,use_reloader=False)
 
 
 def keep_alive():
